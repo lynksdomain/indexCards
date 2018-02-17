@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -256,34 +257,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frS-X9-c6M">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frS-X9-c6M">
+                                <rect key="frame" x="11" y="31" width="46" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="mPe-on-T6b"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="End"/>
                                 <connections>
-                                    <action selector="endQuizPressed:" destination="Uod-VA-xNl" eventType="touchUpInside" id="O0N-Fe-ynv"/>
+                                    <action selector="endQuizPressed:" destination="Uod-VA-xNl" eventType="touchUpInside" id="jaM-CO-WYQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gw-cR-Wd3">
-                                <rect key="frame" x="141" y="482" width="93" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gw-cR-Wd3">
+                                <rect key="frame" x="153" y="395.5" width="69" height="30"/>
                                 <state key="normal" title="Next Card"/>
                                 <connections>
                                     <action selector="nextCardPressed:" destination="Uod-VA-xNl" eventType="touchUpInside" id="70E-TV-eQM"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QA6-oN-M3v">
-                                <rect key="frame" x="67" y="205" width="240" height="193"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QA6-oN-M3v">
+                                <rect key="frame" x="18.5" y="140" width="337.5" height="200.5"/>
                                 <color key="backgroundColor" red="0.91459417340000004" green="0.1979196966" blue="0.13716858630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="TKu-0L-Kfg" appends="YES" id="9yn-u7-3yZ"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QA6-oN-M3v" firstAttribute="centerY" secondItem="KHn-Na-w0W" secondAttribute="centerY" multiplier="0.7" id="6X7-g9-5q7"/>
+                            <constraint firstItem="5Gw-cR-Wd3" firstAttribute="centerX" secondItem="KHn-Na-w0W" secondAttribute="centerX" id="O7v-sk-XuE"/>
+                            <constraint firstItem="QA6-oN-M3v" firstAttribute="height" secondItem="eyL-y0-PMu" secondAttribute="height" multiplier="0.3" id="Yfm-Sf-3CG"/>
+                            <constraint firstItem="frS-X9-c6M" firstAttribute="top" secondItem="KHn-Na-w0W" secondAttribute="top" constant="11" id="ZfZ-ht-YvM"/>
+                            <constraint firstItem="5Gw-cR-Wd3" firstAttribute="top" secondItem="QA6-oN-M3v" secondAttribute="bottom" constant="55" id="bQA-rl-RHd"/>
+                            <constraint firstItem="QA6-oN-M3v" firstAttribute="width" secondItem="eyL-y0-PMu" secondAttribute="width" multiplier="0.9" id="dYs-eU-Ygr"/>
+                            <constraint firstItem="QA6-oN-M3v" firstAttribute="centerX" secondItem="KHn-Na-w0W" secondAttribute="centerX" id="sYg-rv-BAD"/>
+                            <constraint firstItem="frS-X9-c6M" firstAttribute="leading" secondItem="KHn-Na-w0W" secondAttribute="leading" constant="11" id="wIr-uT-VQW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KHn-Na-w0W"/>
                     </view>
+                    <connections>
+                        <outlet property="mainView" destination="QA6-oN-M3v" id="nHH-H6-LBC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYh-ti-2Un" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TKu-0L-Kfg">
+                    <connections>
+                        <action selector="tapped:" destination="Uod-VA-xNl" id="c7j-jR-oQZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3668" y="322.48875562218893"/>
         </scene>

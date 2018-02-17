@@ -1,5 +1,5 @@
 //
-//  FrontCard.swift
+//  BackCard.swift
 //  indexCards
 //
 //  Created by C4Q on 2/16/18.
@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import SnapKit
 
-class FrontCard: UIView {
+class BackCard: UIView {
+
     
-    lazy var question : UILabel = {
+    lazy var answer : UILabel = {
         var label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -28,16 +28,16 @@ class FrontCard: UIView {
         super.init(coder: aDecoder)
     }
     
- 
+    
     
     func setViews(){
         
-        self.addSubview(question)
-        question.snp.makeConstraints { (make) in
+        self.addSubview(answer)
+        answer.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
             make.centerY.equalTo(self.snp.centerY)
             make.width.equalTo(self.snp.width).multipliedBy(0.9)
         }
     }
-    
+
 }

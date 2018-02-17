@@ -48,6 +48,20 @@ class CardTableViewController: UITableViewController {
         return cell
     }
     
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if cards.isEmpty && identifier == "QuizSegue"{
+            let alert = UIAlertController(title: "No Cards Found!", message: "you must first add cards to take a quiz!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        return true
+    }
+    
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddCardSegue"{
         if let destination = segue.destination as? AddCardViewController{

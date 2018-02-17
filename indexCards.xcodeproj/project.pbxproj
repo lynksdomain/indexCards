@@ -23,6 +23,7 @@
 		813A16262037AAB90070C0A8 /* DBService+Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A16252037AAB90070C0A8 /* DBService+Cards.swift */; };
 		813A162F2037B5AD0070C0A8 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A162E2037B5AD0070C0A8 /* QuizViewController.swift */; };
 		813A16312037B9970070C0A8 /* FrontCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A16302037B9970070C0A8 /* FrontCard.swift */; };
+		813A16332037C3780070C0A8 /* BackCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A16322037C3780070C0A8 /* BackCard.swift */; };
 		819916562034F64600348FAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819916552034F64600348FAD /* AppDelegate.swift */; };
 		819916582034F64600348FAD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819916572034F64600348FAD /* LoginViewController.swift */; };
 		8199165B2034F64600348FAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819916592034F64600348FAD /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		813A16252037AAB90070C0A8 /* DBService+Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+Cards.swift"; sourceTree = "<group>"; };
 		813A162E2037B5AD0070C0A8 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		813A16302037B9970070C0A8 /* FrontCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontCard.swift; sourceTree = "<group>"; };
+		813A16322037C3780070C0A8 /* BackCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackCard.swift; sourceTree = "<group>"; };
 		819916522034F64600348FAD /* indexCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = indexCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		819916552034F64600348FAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		819916572034F64600348FAD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				813A16302037B9970070C0A8 /* FrontCard.swift */,
+				813A16322037C3780070C0A8 /* BackCard.swift */,
 				819916592034F64600348FAD /* Main.storyboard */,
 				81381C162034FFD1003EB7C0 /* GoogleService-Info.plist */,
 				819916612034F64600348FAD /* Info.plist */,
@@ -353,6 +356,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-indexCards/Pods-indexCards-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -360,6 +364,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -427,6 +432,7 @@
 				81381C1D20350341003EB7C0 /* AppUser.swift in Sources */,
 				81381C1F2035042B003EB7C0 /* DBService.swift in Sources */,
 				81381C1920350314003EB7C0 /* AuthUserService.swift in Sources */,
+				813A16332037C3780070C0A8 /* BackCard.swift in Sources */,
 				813A16242037A7170070C0A8 /* CardTableViewController.swift in Sources */,
 				819916582034F64600348FAD /* LoginViewController.swift in Sources */,
 				813A162F2037B5AD0070C0A8 /* QuizViewController.swift in Sources */,
