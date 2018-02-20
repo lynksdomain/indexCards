@@ -8,6 +8,9 @@
 
 import UIKit
 import Firebase
+import ChameleonFramework
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        var navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+       
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor(gradientStyle: UIGradientStyle.leftToRight, withFrame: UIScreen.main.bounds, andColors: [FlatMint(), FlatWatermelon()]), with: .contrast)
+        
+        
+        
         
         if let _ = AuthUserService.getCurrentUser() {
             window = UIWindow(frame: UIScreen.main.bounds)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TableFlip
 
 class categoryTableViewController: UITableViewController {
     
@@ -15,8 +16,16 @@ class categoryTableViewController: UITableViewController {
     var myCategories = [Category](){
         didSet{
             self.tableView.reloadData()
+            tableView.animate(animation: TableViewAnimation.Cell.fade(duration: 0.5))
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.animate(animation: TableViewAnimation.Cell.fade(duration: 0.5))
+
+    }
+   
+    
     
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Log Out", message: "are you sure you want to log out?", preferredStyle: .alert)
@@ -39,6 +48,8 @@ class categoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
         DBService.manager.getAppUser(with: currentUser!.uid) { (appUser) in
             self.user = appUser
         }

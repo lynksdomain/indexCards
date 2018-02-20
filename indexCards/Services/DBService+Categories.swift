@@ -17,11 +17,20 @@ extension DBService {
 
 func addCategory(name: String){
 guard let currentUser = AuthUserService.getCurrentUser() else {print("could not get current user"); return}
+    for cata in categories{
+        if cata.name == name{
+            self.delegate?.didFailToAddCategory!()
+            return
+        }
+    }
+    
+    
     let ref = categoryRef.childByAutoId()
     let category = Category(name: name, uID: currentUser.uid)
     ref.setValue(["name": category.name,
               "uID": category.uID,
               ])
+    self.delegate?.didAddCategory!()
 }
     
     public func getAllCategories(completion: @escaping (_ category: [Category]) -> Void) {

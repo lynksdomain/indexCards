@@ -14,6 +14,12 @@ extension DBService{
     
     
     func addCard(question: String, answer: String, category: String){
+        for card in cards{
+            if card.question == question{
+                self.delegate?.didFailToAddCard!()
+                return
+            }
+        }
         guard let currentUser = AuthUserService.getCurrentUser() else {print("could not get current user"); return}
         let ref = cardRef.childByAutoId()
         let card = Card(question: question, answer: answer, uID: currentUser.uid, category: category)
@@ -22,6 +28,7 @@ extension DBService{
                       "uID": card.uID,
                       "category": card.category
                       ])
+        self.delegate?.didAddCard!()
     }
     
     
@@ -48,7 +55,7 @@ extension DBService{
             }
             guard let userId = AuthUserService.getCurrentUser()?.uid else {print("cant get current users categories"); return}
             cards = cards.filter{ $0.uID ==  userId}
-//            DBService.manager.cards = cards
+            DBService.manager.cards = cards
             completion(cards)
         }
     }

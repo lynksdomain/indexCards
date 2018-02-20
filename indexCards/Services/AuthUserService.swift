@@ -48,13 +48,7 @@ class AuthUserService: NSObject {
             if let error = error {
                 self.delegate?.didFailCreatingUser?(self, error: error)
             } else if let user = user {
-                user.sendEmailVerification(completion: { (error) in
-                    if let error = error {
-                        self.delegate?.didFailEmailVerification?(self, user: user, error: error.localizedDescription)
-                    } else {
-                        self.delegate?.didSendEmailVerification?(self, user: user, message: "A verification email has been sent. Please check your email and verify your account before logging in.")
-                    }
-                })
+               
                 
                 let newAppUser = AppUser(email: email, uID: user.uid)
                 
@@ -89,7 +83,7 @@ class AuthUserService: NSObject {
     public func signIn(withEmail email: String, password pass: String) {
         Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
             if let error = error {
-                self.delegate?.didFailSigningOut?(self, error: error)
+                self.delegate?.didFailSigningIn!(self, error: error)
             } else if let user = user {
                 
                 DBService.manager.getAppUser(with: user.uid, completion: { (AppUser) in

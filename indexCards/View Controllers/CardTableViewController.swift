@@ -7,20 +7,22 @@
 //
 
 import UIKit
+import TableFlip
 
 class CardTableViewController: UITableViewController {
     var cards = [Card](){
         didSet{
             tableView.reloadData()
+            tableView.animate(animation: TableViewAnimation.Cell.fade(duration: 0.5))
+
         }
     }
     var category: String?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+        navigationItem.title = category!
         DBService.manager.getCards { (cards) in
             self.cards = cards.filter(){$0.category == self.category}
             if self.cards.count == 0{
@@ -30,9 +32,7 @@ class CardTableViewController: UITableViewController {
             }
         }
     }
-    @IBAction func startQuizPressed(_ sender: UIBarButtonItem) {
-    }
-  
+ 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards.count

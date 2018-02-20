@@ -10,7 +10,10 @@ import Foundation
 import FirebaseDatabase
 
 @objc protocol DBServiceDelegate: class {
-    
+   @objc optional func didFailToAddCategory()
+   @objc optional func didAddCategory()
+    @objc optional func didAddCard()
+    @objc optional func didFailToAddCard()
     
 }
 
