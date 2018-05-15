@@ -7,10 +7,6 @@
 //
 
 import Foundation
-
-
-
-import Foundation
 import FirebaseDatabase
 
 extension DBService {

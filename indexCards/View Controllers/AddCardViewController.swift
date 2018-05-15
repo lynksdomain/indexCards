@@ -45,7 +45,7 @@ class AddCardViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
             return
         }
-        DBService.manager.addCard(question: questionTF.text!, answer: answerTF.text!, category: category)
+        DBService.manager.addCard(question: questionTF.text!, answer: answerTF.text!, category: category, correct: false)
    }
     
     

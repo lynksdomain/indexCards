@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0901D5F50973E2EA68B0406A /* Pods_indexCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24ECF4BB7A74347D889083EB /* Pods_indexCards.framework */; };
-		81381C172034FFD1003EB7C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81381C162034FFD1003EB7C0 /* GoogleService-Info.plist */; };
 		81381C1920350314003EB7C0 /* AuthUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81381C1820350314003EB7C0 /* AuthUserService.swift */; };
 		81381C1D20350341003EB7C0 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81381C1C20350341003EB7C0 /* AppUser.swift */; };
 		81381C1F2035042B003EB7C0 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81381C1E2035042B003EB7C0 /* DBService.swift */; };
@@ -24,6 +23,7 @@
 		813A162F2037B5AD0070C0A8 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A162E2037B5AD0070C0A8 /* QuizViewController.swift */; };
 		813A16312037B9970070C0A8 /* FrontCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A16302037B9970070C0A8 /* FrontCard.swift */; };
 		813A16332037C3780070C0A8 /* BackCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A16322037C3780070C0A8 /* BackCard.swift */; };
+		815437DC20AA5DAF007EFEC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 815437DB20AA5DAF007EFEC7 /* GoogleService-Info.plist */; };
 		819916562034F64600348FAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819916552034F64600348FAD /* AppDelegate.swift */; };
 		819916582034F64600348FAD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819916572034F64600348FAD /* LoginViewController.swift */; };
 		8199165B2034F64600348FAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819916592034F64600348FAD /* Main.storyboard */; };
@@ -49,7 +49,6 @@
 		248814B92EA8D11757675337 /* Pods-indexCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-indexCards.debug.xcconfig"; path = "Pods/Target Support Files/Pods-indexCards/Pods-indexCards.debug.xcconfig"; sourceTree = "<group>"; };
 		24ECF4BB7A74347D889083EB /* Pods_indexCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_indexCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2C1FD795A67905AB0B4414 /* Pods-indexCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-indexCards.release.xcconfig"; path = "Pods/Target Support Files/Pods-indexCards/Pods-indexCards.release.xcconfig"; sourceTree = "<group>"; };
-		81381C162034FFD1003EB7C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81381C1820350314003EB7C0 /* AuthUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserService.swift; sourceTree = "<group>"; };
 		81381C1C20350341003EB7C0 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		81381C1E2035042B003EB7C0 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		813A162E2037B5AD0070C0A8 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		813A16302037B9970070C0A8 /* FrontCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontCard.swift; sourceTree = "<group>"; };
 		813A16322037C3780070C0A8 /* BackCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackCard.swift; sourceTree = "<group>"; };
+		815437DB20AA5DAF007EFEC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		819916522034F64600348FAD /* indexCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = indexCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		819916552034F64600348FAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		819916572034F64600348FAD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 				813A16302037B9970070C0A8 /* FrontCard.swift */,
 				813A16322037C3780070C0A8 /* BackCard.swift */,
 				819916592034F64600348FAD /* Main.storyboard */,
-				81381C162034FFD1003EB7C0 /* GoogleService-Info.plist */,
+				815437DB20AA5DAF007EFEC7 /* GoogleService-Info.plist */,
 				819916612034F64600348FAD /* Info.plist */,
 				813A16282037B4240070C0A8 /* Services */,
 				813A16292037B4450070C0A8 /* Supporting Files */,
@@ -298,7 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				819916602034F64600348FAD /* LaunchScreen.storyboard in Resources */,
-				81381C172034FFD1003EB7C0 /* GoogleService-Info.plist in Resources */,
+				815437DC20AA5DAF007EFEC7 /* GoogleService-Info.plist in Resources */,
 				8199165D2034F64600348FAD /* Assets.xcassets in Resources */,
 				8199165B2034F64600348FAD /* Main.storyboard in Resources */,
 			);

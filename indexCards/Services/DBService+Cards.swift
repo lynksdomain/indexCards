@@ -13,7 +13,7 @@ import FirebaseDatabase
 extension DBService{
     
     
-    func addCard(question: String, answer: String, category: String){
+    func addCard(question: String, answer: String, category: String, correct: Bool){
         for card in cards{
             if card.question == question{
                 self.delegate?.didFailToAddCard!()
@@ -22,14 +22,23 @@ extension DBService{
         }
         guard let currentUser = AuthUserService.getCurrentUser() else {print("could not get current user"); return}
         let ref = cardRef.childByAutoId()
-        let card = Card(question: question, answer: answer, uID: currentUser.uid, category: category)
+        let card = Card(question: question, answer: answer, uID: currentUser.uid, category: category, correct: correct, cardID: ref.key)
         ref.setValue(["question": card.question,
                       "answer": card.answer,
                       "uID": card.uID,
-                      "category": card.category
+                      "category": card.category,
+                      "correct": card.correct,
+                      "cardID": card.cardID
                       ])
         self.delegate?.didAddCard!()
     }
+    
+    
+    func editCard(){
+        
+    }
+    
+    
     
     
     public func getCards(completion: @escaping (_ category: [Card]) -> Void) {
@@ -46,10 +55,12 @@ extension DBService{
                 guard let question = cardObject["question"] as? String,
                 let answer = cardObject["answer"] as? String,
                 let uID = cardObject["uID"] as? String,
-                let category = cardObject["category"] as? String
-                    else { print("error getting posts");return}
+                let category = cardObject["category"] as? String,
+                let correct = cardObject["correct"] as? Bool,
+                let cardID = cardObject["cardID"] as? String
+                else { print("error getting posts");return}
 
-                let thisCard = Card(question: question, answer: answer, uID: uID, category: category)
+                let thisCard = Card(question: question, answer: answer, uID: uID, category: category, correct: correct, cardID: cardID)
                 cards.append(thisCard)
 
             }
